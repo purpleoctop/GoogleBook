@@ -1,0 +1,12 @@
+<div class="component">
+  <div class='container'>
+    <div *ngFor="let book of books" class='book'>
+      <img [src]="book.imageLinks.thumbnail" [alt]="book.title">
+      <div class="description">
+        <h3>{{book.title}}</h3>
+        <p>by {{book.authors}}</p>
+        <button>Read more</button>
+      </div>
+    </div>
+  </div>
+</div>
