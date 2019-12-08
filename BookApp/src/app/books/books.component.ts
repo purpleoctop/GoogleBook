@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {Collection} from '../models/Collection';
 import {Book} from '../models/Book';
+import {BooksService} from '../books.service';
 
 @Component({
   selector: 'app-books',
@@ -11,14 +12,11 @@ import {Book} from '../models/Book';
 export class BooksComponent implements OnInit {
 
   books: Book[] = [];
-  constructor(private httpClient: HttpClient) { }
+  constructor(private booksService: BooksService) { }
 
   ngOnInit() {
-   this.httpClient.get('https://www.googleapis.com/books/v1/volumes?q=detective')
-   .subscribe((collection: Collection) => {
-       this.books = collection.items.map((a) => a.volumeInfo);
-   });
-
+    this.booksService.getBooks().subscribe(res =>
+      this.books = res);
   }
 
 }

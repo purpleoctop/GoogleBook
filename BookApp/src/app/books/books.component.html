@@ -1,12 +1,17 @@
 <div class="component">
-  <div class='container'>
-    <div *ngFor="let book of books" class='book'>
-      <img [src]="book.imageLinks.thumbnail" [alt]="book.title">
-      <div class="description">
-        <h3>{{book.title}}</h3>
-        <p>by {{book.authors}}</p>
-        <button>Read more</button>
+  <div class="grid-container">
+    <div class="grid-item" *ngFor="let book of books">
+      <div class="container">
+        <img [src]="book.imageLinks.thumbnail" [alt]="book.title">
+        <div class="description">
+          <h1>{{book.title}}</h1>
+          <h1>{{book.subtitle}}</h1>
+          <p>Author(s): {{book.authors}}</p>
+          <p>Publisher: {{book.publisher}}</p>
+          <p>Publish Date: {{book.publishedDate}}</p>
+        </div>
       </div>
+      <button>Read More</button>
     </div>
   </div>
 </div>

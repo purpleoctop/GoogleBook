@@ -7,6 +7,8 @@ export interface Book {
             thumbnail: string
         };
         title: string;
+        subtitle: string;
+        publsher: string;
         publishedDate: string;
 
 }

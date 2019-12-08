@@ -1,32 +1,67 @@
-.component{
+@import "../../palette";
+
+.component {
   height: 100%;
-  width: 100%;
-background-color: rgb(2, 2, 2);
-.container {
-  width:80%;
-  display: flex;
-  flex-wrap: wrap;
 
-  .book {
-    display: flex;
-    height: 300px;
-    width: 200px;
-    border: 1px solid black;
-    margin-bottom: 10px;
-    background-color: rgb(243, 243, 243, 0.3);
+  .grid-container {
+    width: 80%;
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: 0 auto;
 
-    img {
-      width: 100px;
-      height: 150px;
-    }
+    .grid-item {
+      margin-bottom: 10px;
+      padding: 30px;
+      border-radius: 5px;
+      background-color: $light-grey;
+    
+      &:nth-child(2n+1) {
+        margin-right: 50px;
+      }
 
-    .description {
-      width: 200px;
+      .container {
+        display: flex;
+        justify-content: space-between;
 
-      h3 {}
+          img {
+          
+          }
 
-      p {}
+        .description {
+          width: 300px;
+          height: 200px;
+
+          h1,
+          p {
+            font-family: 'Roboto Slab';
+            font-size: 15px;
+            color: $primary;
+            margin: 5px;
+          }
+
+          p {
+            font-size: 12px;
+          }
+
+          .info {
+            width: 400px;
+            height: 100px;
+            overflow: hidden;
+          }
+        }
+      }
+
+      button {
+        color: $white;
+        background-color: $orange;
+        border: 0px;
+        height: 40px;
+        width: 100px;
+        border-radius: 2px;
+        font-family: 'Roboto Slab';
+        font-size: 15px;
+        float: right;
+      }
     }
   }
-}
 }
