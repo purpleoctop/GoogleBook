@@ -4,7 +4,7 @@
   height: 100%;
 
   .grid-container {
-    width: 70%;
+    width: 90%;
     display: grid;
     grid-template-columns: auto auto;
     margin: 0 auto;
@@ -16,14 +16,17 @@
       background-color: $light-grey;
     
       &:nth-child(2n+1) {
-        margin-right: 50px;
+        margin-right: 25px;
+      }
+      &:nth-child(2n) {
+        margin-left: 25px;
       }
       &:hover{
         background-image: linear-gradient(to bottom, rgb(241, 156, 30, 0.7) , rgb(240, 240, 240, 1));
       }
 
       .container {
-        width:80%;
+        width:90%;
         margin:auto;
         display: flex;
         justify-content: space-between;
