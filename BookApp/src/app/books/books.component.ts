@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import {Collection} from '../models/Collection';
 import {Book} from '../models/Book';
 import {BooksService} from '../books.service';
 
@@ -18,5 +16,4 @@ export class BooksComponent implements OnInit {
     this.booksService.getBooks().subscribe(res =>
       this.books = res);
   }
-
 }

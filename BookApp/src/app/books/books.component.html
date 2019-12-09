@@ -11,7 +11,8 @@
           <p>Publish Date: {{book.publishedDate}}</p>
         </div>
       </div>
-      <button>Read More</button>
+      <button>Like</button>
+      <button [routerLink]="['/details']" routerLinkActive="active">Read More</button>
     </div>
   </div>
 </div>

@@ -5,7 +5,9 @@
     <span>Reads</span>
   </div>
   <nav>
-    <a href="#">Home</a>
-    <a href="#">Favorites</a>
+    <a [routerLink]="['/home']" routerLinkActive="active">Home</a>
+    <a [routerLink]="['/favorites']" routerLinkActive="active">Favorites</a>
   </nav>
 </header>
+<router-outlet></router-outlet> 
+

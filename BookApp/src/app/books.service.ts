@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {Collection} from '../app/models/Collection';
-import {Book} from '../app/models/Book';
 import { map } from 'rxjs/operators';
-import { collectExternalReferences } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
