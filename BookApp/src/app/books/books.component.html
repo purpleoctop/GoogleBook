@@ -2,17 +2,17 @@
   <div class="grid-container">
     <div class="grid-item" *ngFor="let book of books">
       <div class="container">
-        <img [src]="book.imageLinks.thumbnail" [alt]="book.title">
+        <img [src]="book.volumeInfo.imageLinks.thumbnail" [alt]="book.volumeInfo.title">
         <div class="description">
-          <h1>{{book.title}}</h1>
-          <h1>{{book.subtitle}}</h1>
-          <p>Author(s): {{book.authors}}</p>
-          <p>Publisher: {{book.publisher}}</p>
-          <p>Publish Date: {{book.publishedDate}}</p>
+          <h1>{{book.volumeInfo.title}}</h1>
+          <h1>{{book.volumeInfo.subtitle}}</h1>
+          <p>Author(s): {{book.volumeInfo.authors}}</p>
+          <p>Publisher: {{book.volumeInfo.publisher}}</p>
+          <p>Publish Date: {{book.volumeInfo.publishedDate}}</p>
         </div>
       </div>
       <button>Like</button>
-      <button [routerLink]="['/details']" routerLinkActive="active">Read More</button>
+      <button [routerLink]="['/details/'] + book.id" routerLinkActive="active">Read More</button>
     </div>
   </div>
 </div>

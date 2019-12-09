@@ -1,4 +1,7 @@
+
 export interface Book {
+    id: string;
+    volumeInfo: {
         authors: string[];
         averageRating: number;
         categories: string[];
@@ -10,5 +13,5 @@ export interface Book {
         subtitle: string;
         publsher: string;
         publishedDate: string;
-
+    }
 }
