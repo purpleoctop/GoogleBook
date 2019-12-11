@@ -1,7 +1,18 @@
 <div class="component" *ngIf="book$ | async as book">
-    <h1>{{book.volumeInfo.title}}</h1>
-    <h1>{{book.volumeInfo.subtitle}}</h1>
-    <p>Author(s): {{book.volumeInfo.authors}}</p>
-    <p>Publisher: {{book.volumeInfo.publisher}}</p>
-    <p>Publish Date: {{book.volumeInfo.publishedDate}}</p>
+    <img [src]="book.volumeInfo.imageLinks.thumbnail" [alt]="book.volumeInfo.title">
+    <div class="info">
+        <div class="title">
+            <h1>{{book.volumeInfo.title}}</h1>
+            <h1>{{book.volumeInfo.subtitle}}</h1>
+        </div>
+        <p>Author(s): {{book.volumeInfo.authors}}</p>
+        <p>Publisher: {{book.volumeInfo.publisher}}</p>
+        <p>Publish Date: {{book.volumeInfo.publishedDate}}</p>
+        <p *ngIf='book.volumeInfo.averageRating'>averageRating: {{book.volumeInfo.averageRating}}</p>
+            <app-rating [selectedStars]="book.volumeInfo.averageRating"></app-rating>
+        <p>Categories: {{book.volumeInfo.categories}}</p>
+        <p>Total Pages: {{book.volumeInfo.pageCount}}</p>
+        <p>Language: {{book.volumeInfo.language}}</p>
+        <button>Like</button>
+    </div>
 </div>

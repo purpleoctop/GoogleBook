@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { DetailsComponent } from './details/details.component';
 import { LoadingComponent } from './loading/loading.component';
+import { RatingComponent } from './rating/rating.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { LoadingComponent } from './loading/loading.component';
     BooksComponent,
     FavoritesComponent,
     DetailsComponent,
-    LoadingComponent
+    LoadingComponent,
+    RatingComponent
   ],
   imports: [
     BrowserModule,

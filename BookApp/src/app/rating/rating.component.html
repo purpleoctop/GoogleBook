@@ -1,0 +1,3 @@
+<i class="fa fa-star vote-star" *ngFor="let item of [1,2,3,4,5]; let i = index" 
+    [ngClass]="{'active': i+1 <= selectedStars, 'inactive': i+1 > selectedStars}"></i>
+<!-- [class.active]="i+1 <= selectedStars" -->

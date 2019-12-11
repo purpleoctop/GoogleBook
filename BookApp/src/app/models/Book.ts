@@ -13,5 +13,7 @@ export interface Book {
         subtitle: string;
         publsher: string;
         publishedDate: string;
+        language: string,
+        pageCount: number
     }
 }

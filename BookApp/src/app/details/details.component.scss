@@ -1,0 +1,39 @@
+@import "../../palette";
+
+.component {
+    display: flex;
+    background-color: $light-grey;
+    width:50%;
+    margin-left:25%;
+    padding: 30px;
+    border-radius: 5px;
+    .info{
+    padding-left: 30px;
+   
+    .title {
+        padding-bottom:30px;
+      h1 {
+        font-family: "Roboto Slab";
+        font-size: 22px;
+        color: $primary;
+        &:nth-child(2n + 2) {
+          font-size: 15px;
+        }
+      }
+    }
+    img{
+        height:300px;
+        width:250px;
+    }
+    button {
+      color: $white;
+      background-color: $orange;
+      border: 0px;
+      height: 40px;
+      width: 100px;
+      border-radius: 2px;
+      font-family: "Roboto Slab";
+      font-size: 15px;
+    }
+  }
+}

@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Book } from '../models/Book';
 import { BooksService } from '../books.service';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/internal/operators/map';
+import { map , tap } from 'rxjs/internal/operators';
 import { Collection } from '../models/Collection';
-import { tap } from 'rxjs/internal/operators/tap';
+
 
 
 @Component({

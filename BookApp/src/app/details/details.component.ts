@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DetailsService } from '../details.service';
 import { Book } from '../models/Book';
-import { tap, takeWhile } from 'rxjs/operators';
+import { takeWhile } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
 
@@ -25,7 +25,6 @@ export class DetailsComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
- 
     this.route.params
     .pipe(takeWhile(() => this.alive))
     .subscribe(res => {

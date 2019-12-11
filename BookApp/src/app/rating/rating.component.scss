@@ -1,0 +1,8 @@
+.vote-star {
+    &.active{
+        color: yellow;
+    }
+    &.inactive {
+        color: blue;
+    }
+}
