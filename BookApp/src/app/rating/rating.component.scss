@@ -1,8 +1,10 @@
+@import '../../palette.scss';
+
 .vote-star {
     &.active{
-        color: yellow;
+        color: $orange;
     }
     &.inactive {
-        color: blue;
+        color: $primary;
     }
 }
