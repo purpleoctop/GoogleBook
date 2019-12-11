@@ -8,8 +8,9 @@
         <p>Author(s): {{book.volumeInfo.authors}}</p>
         <p>Publisher: {{book.volumeInfo.publisher}}</p>
         <p>Publish Date: {{book.volumeInfo.publishedDate}}</p>
-        <p *ngIf='book.volumeInfo.averageRating'>averageRating: {{book.volumeInfo.averageRating}}</p>
+        <p *ngIf='book.volumeInfo.averageRating'>Rating:
             <app-rating [selectedStars]="book.volumeInfo.averageRating"></app-rating>
+        </p>
         <p>Categories: {{book.volumeInfo.categories}}</p>
         <p>Total Pages: {{book.volumeInfo.pageCount}}</p>
         <p>Language: {{book.volumeInfo.language}}</p>
