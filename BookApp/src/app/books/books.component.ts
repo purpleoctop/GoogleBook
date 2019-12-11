@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from '../models/Book';
 import { BooksService } from '../books.service';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/internal/operators/map';
 import { Collection } from '../models/Collection';
+import { tap } from 'rxjs/internal/operators/tap';
 
 
 @Component({
@@ -10,15 +13,15 @@ import { Collection } from '../models/Collection';
   styleUrls: ['./books.component.scss']
 })
 export class BooksComponent implements OnInit {
-
-  books: Book[] = [];
+  loading = false;
+  books$: Observable<Book[]> = new Observable();
   constructor(private booksService: BooksService) { }
 
   ngOnInit() {
-    this.booksService.getBooks()
-      .subscribe((collection: Collection) =>
-        this.books = collection.items
-      )
+    this.loading = true;
+    this.books$ = this.booksService.getBooks().pipe(
+      map((books: Collection) => books.items))
+      tap(() => this.loading = false)
   }
 
 }

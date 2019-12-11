@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { DetailsService } from '../details.service';
 import { Book } from '../models/Book';
-import { Collection } from '../models/Collection';
+import { tap, takeWhile } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+
 
 
 @Component({
@@ -10,26 +12,28 @@ import { Collection } from '../models/Collection';
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.scss']
 })
-export class DetailsComponent implements OnInit {
+export class DetailsComponent implements OnInit, OnDestroy {
+ 
   bookId = '';
-  book: Book;
+  book$: Observable<Book> = new Observable();
+  private alive = true;
+
+
   constructor(
     private detailsService: DetailsService,
-    private router: Router,
-    private routerState: ActivatedRoute,
+    private route: ActivatedRoute,
   ) { }
 
   ngOnInit() {
-    this.routerState.paramMap.subscribe((params) => {
-      this.bookId += params.get('id');
-      this.detailsService.getDetails(this.bookId).subscribe((book) =>
-        this.book = book
-      );
+ 
+    this.route.params
+    .pipe(takeWhile(() => this.alive))
+    .subscribe(res => {
+      this.book$ = this.detailsService.getDetails(res.id);
     });
   }
 
-  showbook(){
-    console.log(this.book);
+  ngOnDestroy() {
+    this.alive = false;
   }
-
 }

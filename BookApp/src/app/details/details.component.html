@@ -1,6 +1,7 @@
-<p>details works!</p>
-<button (click)='showbook()'>book</button>
-
-<div class="component">
-    <p>Title: {{book.volumeInfo.title}}</p>
+<div class="component" *ngIf="book$ | async as book">
+    <h1>{{book.volumeInfo.title}}</h1>
+    <h1>{{book.volumeInfo.subtitle}}</h1>
+    <p>Author(s): {{book.volumeInfo.authors}}</p>
+    <p>Publisher: {{book.volumeInfo.publisher}}</p>
+    <p>Publish Date: {{book.volumeInfo.publishedDate}}</p>
 </div>

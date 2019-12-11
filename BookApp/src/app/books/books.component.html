@@ -1,5 +1,5 @@
 <div class="component">
-  <div class="grid-container">
+  <div class="grid-container" *ngIf="books$ | async as books">
     <div class="grid-item" *ngFor="let book of books">
       <div class="container">
         <img [src]="book.volumeInfo.imageLinks.thumbnail" [alt]="book.volumeInfo.title">
@@ -15,4 +15,7 @@
       <button [routerLink]="['/details/'] + book.id" routerLinkActive="active">Read More</button>
     </div>
   </div>
+</div>
+<div style="position: relative; height: 100vh; display: flex; align-items: center; justify-content: center;">
+  <app-loading *ngIf="loading">loading</app-loading>
 </div>
