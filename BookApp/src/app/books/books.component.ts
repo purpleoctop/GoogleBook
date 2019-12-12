@@ -7,6 +7,7 @@ import { Collection } from '../models/Collection';
 
 
 
+
 @Component({
   selector: 'app-books',
   templateUrl: './books.component.html',
@@ -20,8 +21,7 @@ export class BooksComponent implements OnInit {
   ngOnInit() {
     this.loading = true;
     this.books$ = this.booksService.getBooks().pipe(
+      tap(() => this.loading = false),
       map((books: Collection) => books.items))
-      tap(() => this.loading = false)
   }
-
 }

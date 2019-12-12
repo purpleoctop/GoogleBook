@@ -3,10 +3,10 @@
 
 $bar-size: 5px;
 $bar-radius: 60px;
-$bar-bg: rgba(0, 0, 0, 0.075);
+$bar-bg: $light-grey;
 
 body {
-  background: $light-grey;
+  background: $bar-bg;
 }
 
 @keyframes loader {
@@ -67,7 +67,7 @@ body {
 }
 
 .progress {
-  animation: loader 8s ease infinite;
+  animation: loader 0.5s ease infinite;
   background: $orange;
   color: #fff;
   padding: $bar-size;

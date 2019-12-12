@@ -9,13 +9,10 @@ export class DetailsService {
   constructor(private http: HttpClient) { }
   host = 'https://www.googleapis.com/books/v1/volumes';
   stars :  number;
-  
+
   getDetails(bookId: string) {
     const url = `${this.host}/${bookId}`;
     return this.http.get<Book>(url);
   }
 
-  getStars(){
-
-  }
 }
