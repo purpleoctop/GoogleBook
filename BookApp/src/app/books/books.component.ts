@@ -4,8 +4,8 @@ import { BooksService } from '../books.service';
 import { Observable } from 'rxjs';
 import { map , tap } from 'rxjs/internal/operators';
 import { Collection } from '../models/Collection';
-
-
+import { Store } from '@ngrx/store';
+import * as reducers from '../store/reducers/favorites'
 
 
 @Component({
@@ -16,7 +16,8 @@ import { Collection } from '../models/Collection';
 export class BooksComponent implements OnInit {
   loading = false;
   books$: Observable<Book[]> = new Observable();
-  constructor(private booksService: BooksService) { }
+
+  constructor(private booksService: BooksService, private store: Store<reducers.State>) { }
 
   ngOnInit() {
     this.loading = true;

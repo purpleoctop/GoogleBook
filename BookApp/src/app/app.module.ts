@@ -9,6 +9,8 @@ import { FavoritesComponent } from './favorites/favorites.component';
 import { DetailsComponent } from './details/details.component';
 import { LoadingComponent } from './loading/loading.component';
 import { RatingComponent } from './rating/rating.component';
+import { StoreModule } from '@ngrx/store';
+import * as reducers from './store/reducers/favorites'
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { RatingComponent } from './rating/rating.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot(reducers)
+
   ],
   providers: [],
   bootstrap: [AppComponent]

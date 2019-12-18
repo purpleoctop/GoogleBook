@@ -11,7 +11,7 @@
           <p>Publish Date: {{book.volumeInfo.publishedDate}}</p>
         </div>
       </div>
-      <button>Like</button>
+      <button (click)="like.emit(book)">Like</button>
       <button [routerLink]="['/details/'] + book.id" routerLinkActive="active">Read More</button>
     </div>
   </div>
